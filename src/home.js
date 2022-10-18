@@ -1,4 +1,4 @@
-import HomeImage from '/images/idli-vada.webp';
+import HomeImage from './images/main.webp';
 
 const contentDiv = document.querySelector('#content');
 
@@ -8,6 +8,13 @@ const loadPage = () => {
 
         const headerDiv = document.createElement('header');
         headerDiv.setAttribute('id', 'header');
+
+        const siteName = document.createElement('h1');
+        siteName.setAttribute('id', 'site-name');
+        siteName.textContent = "Bhat's Thindi Mane";
+
+        const holderDiv = document.createElement('div');
+        holderDiv.setAttribute('id', 'nav-bar');
         
         const homeBtnDiv = document.createElement('div');
         homeBtnDiv.setAttribute('id', 'home-button');
@@ -18,16 +25,18 @@ const loadPage = () => {
         const contactBtnDiv = document.createElement('div');
         contactBtnDiv.setAttribute('id', 'contact-button');
         contactBtnDiv.textContent = "Contact";
+
+        holderDiv.appendChild(homeBtnDiv);
+        holderDiv.appendChild(menuBtnDiv);
+        holderDiv.appendChild(contactBtnDiv);
         
-        headerDiv.textContent = 'My Restaurant';
-        headerDiv.appendChild(homeBtnDiv);
-        headerDiv.appendChild(menuBtnDiv);
-        headerDiv.appendChild(contactBtnDiv);
+        headerDiv.appendChild(siteName);
+        headerDiv.appendChild(holderDiv);
 
         contentDiv.appendChild(headerDiv);
     };
 
-    function createBody() {
+    function createHomePage() {
 
         const main = document.createElement('main');
         main.setAttribute('id', 'home-body');
@@ -42,19 +51,26 @@ const loadPage = () => {
     
         const locationElement = document.createElement('p');
         locationElement.setAttribute('id', 'address');
-        locationElement.textContent = "Random address";
+        locationElement.textContent = "Bengaluru, Karnataka, India - 000000";
 
-        main.appendChild(imageElement);
         main.appendChild(descElement);
+        main.appendChild(imageElement);
         main.appendChild(locationElement);
 
         contentDiv.appendChild(main);
 
     };
 
+    function removeContent() {
+        const content = document.querySelector('main');
+        content.remove();
+    }
+
+
     return {
         createHeader,
-        createBody
+        createHomePage,
+        removeContent
     }
     
 };
