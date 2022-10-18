@@ -1,0 +1,1 @@
+This is a project to create a restaurant page utilizing webpack.
