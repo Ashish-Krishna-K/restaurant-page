@@ -1,9 +1,8 @@
 import { loadPage } from "./home.js";
 import { createMenuPage } from "./menu.js";
 import { createContactPage } from "./contact.js";
-import backgroundImage from './images/bg.jpg';
 
-import './style.css';
+import '../dist/style.css';
 
 const createPage = loadPage();
 
