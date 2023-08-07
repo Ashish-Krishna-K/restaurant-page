@@ -2,11 +2,21 @@ import loadPage from "./page-load";
 import generateHomePage from "./homePage";
 import generateMenuPage from "./menuPage";
 import generateContactPage from "./contactPage";
+import './styles/index.css';
+
+const removeSelectedClass = () => {
+    const navBar = document.querySelectorAll('li.nav-element');
+    navBar.forEach(li => li.classList.remove('selected'));
+}
+
+const addCurrentTabClass = (tab: HTMLLIElement) => {
+    removeSelectedClass();
+    tab.classList.add('selected');
+}
 
 export default function switchTabs(this: HTMLLIElement, ev: MouseEvent) {
+    addCurrentTabClass(this);
     const main = document.querySelector('main');
-    removeSelectedClass();
-    this.classList.add('selected');
     main.removeChild(main.firstChild);
     switch (this.value) {
         case 0:
@@ -19,11 +29,6 @@ export default function switchTabs(this: HTMLLIElement, ev: MouseEvent) {
             main.appendChild(generateContactPage());
             break;
     }
-}
-
-const removeSelectedClass = () => {
-    const navBar = document.querySelectorAll('li.nav-element');
-    navBar.forEach(li => li.classList.remove('selected'));
 }
 
 loadPage();

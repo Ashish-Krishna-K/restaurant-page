@@ -1,0 +1,266 @@
+/* CSS RESET BEGINS */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* CSS RESET ENDS */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100dvh;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
+
+#content {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 3rem;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+ul.nav-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10vw;
+    padding: 1rem;
+}
+
+ul.nav-bar>li {
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+}
+
+main {
+    overflow: auto;
+}
+
+main>section {
+    width: 60%;
+    margin: 5vh auto;
+}
+
+section#home-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    height: 85%;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+section#menu-page {
+    width: 100%;
+}
+
+ul.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+li.menu-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 250px;
+    align-items: center;
+    justify-items: center;
+    gap: 2vh;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+section#contact-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    height: 85%;
+}
+
+footer {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+footer p {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+footer a,
+footer a:visited {
+    text-decoration: none;
+}
+

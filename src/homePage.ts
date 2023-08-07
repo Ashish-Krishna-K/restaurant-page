@@ -1,4 +1,6 @@
-export default function generateHomePage(){
+import main from './images/main.webp';
+
+export default function generateHomePage() {
     const home = document.createElement('section');
     home.setAttribute("id", "home-page");
 
@@ -7,7 +9,7 @@ export default function generateHomePage(){
     home.appendChild(heading);
 
     const img = document.createElement('img');
-    // img.src = 
+    img.src = main;
     home.appendChild(img);
 
     const p = document.createElement('p');
