@@ -1,4 +1,4 @@
-const generateHomePage = () => {
+export default function generateHomePage(){
     const home = document.createElement('section');
     home.setAttribute("id", "home-page");
 
@@ -16,5 +16,3 @@ const generateHomePage = () => {
 
     return home;
 }
-
-export default generateHomePage;

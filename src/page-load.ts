@@ -1,5 +1,5 @@
-import switchTabs from "./logic";
-
+import switchTabs from "./index";
+import generateHomePage from "./homePage";
 
 const createHeader = (): HTMLElement => {
     const header = document.createElement('header');
@@ -15,9 +15,11 @@ const createHeader = (): HTMLElement => {
 const createNavbar = (): HTMLElement => {
     const nav = document.createElement('nav');
     const ul = document.createElement('ul');
+    ul.classList.add('nav-bar');
 
     const homeTab = document.createElement('li');
     homeTab.setAttribute("id", "home-tab");
+    homeTab.classList.add('nav-element', 'selected');
     homeTab.textContent = "HOME";
     homeTab.value = 0;
     homeTab.addEventListener("click", switchTabs);
@@ -25,6 +27,7 @@ const createNavbar = (): HTMLElement => {
 
     const menuTab = document.createElement('li');
     menuTab.setAttribute("id", "menu-tab");
+    menuTab.classList.add('nav-element');
     menuTab.textContent = "MENU";
     menuTab.value = 1;
     menuTab.addEventListener("click", switchTabs);
@@ -32,6 +35,7 @@ const createNavbar = (): HTMLElement => {
 
     const contactTab = document.createElement('li');
     contactTab.setAttribute("id", "contact-tab");
+    contactTab.classList.add('nav-element');
     contactTab.textContent = "CONTACT";
     contactTab.value = 2;
     contactTab.addEventListener("click", switchTabs);
@@ -42,7 +46,9 @@ const createNavbar = (): HTMLElement => {
 }
 
 const createMain = (): HTMLElement => {
-    return document.createElement('main');
+    const main = document.createElement('main');
+    main.appendChild(generateHomePage());
+    return main;
 }
 
 const createFooter = (): HTMLElement => {
