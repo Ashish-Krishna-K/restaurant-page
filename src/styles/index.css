@@ -147,8 +147,18 @@ body {
 }
 
 img {
-    width: 250px;
-    height: 250px;
+    width: 15rem;
+    height: 15rem;
+}
+
+p, h1, h2, h3 {
+    text-align: center;
+}
+
+body {
+    background:url('../images/bg.jpg');
+    color: rgb(255, 255, 0);
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #content {
@@ -158,18 +168,26 @@ img {
     grid-template-rows: 1fr 4fr 3rem;
 }
 
+header,
+footer,
+section#home-page,
+section#contact-page,
+li.menu-item {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
-    padding: 1rem;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 900;
+    font-family: 'Leckerli One', cursive;
 }
 
 ul.nav-bar {
@@ -184,20 +202,35 @@ ul.nav-bar>li {
     cursor: pointer;
     padding: 1rem;
     text-align: center;
+    font-weight: bold;
+    transition: background-color 0.1s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
+
+ul.nav-bar>li:hover {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 0);
+    color: black;
+}
+
+
 .selected {
-    background-color: black;
-    color: white;
+    box-shadow: 0 5px 1px -1px rgb(255, 255, 0);
 }
 
 main {
     overflow: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+main.render-animation {
+    opacity: 0;
 }
 
 main>section {
-    width: 60%;
+    width: 80%;
     margin: 5vh auto;
+    border-radius: 10px;
 }
 
 section#home-page {
@@ -206,16 +239,17 @@ section#home-page {
     grid-template-rows: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
-    height: 85%;
+    height: 85%;  
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
 }
 
 section#menu-page {
-    width: 100%;
+    width: 60%;
 }
 
 ul.menu-container {
@@ -230,13 +264,16 @@ li.menu-item {
     grid-template-rows: 1fr 250px;
     align-items: center;
     justify-items: center;
+    justify-content: space-around;
     gap: 2vh;
-    padding: 1rem;
+    padding: 5rem 1rem;
     border: 1px solid black;
+    border-radius: 20px;
 }
 
 h3 {
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 section#contact-page {
@@ -246,12 +283,14 @@ section#contact-page {
     align-items: center;
     justify-items: center;
     height: 85%;
+    font-size: 1.5rem;
 }
 
 footer {
     display: grid;
     align-items: center;
     justify-items: center;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 footer p {
@@ -261,6 +300,27 @@ footer p {
 
 footer a,
 footer a:visited {
+    color: rgb(255, 51, 204);
     text-decoration: none;
 }
 
+/* Below Scorllbar styling was obtained from a stackoverflow answer */
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.50);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 0, 0.5);
+  } 

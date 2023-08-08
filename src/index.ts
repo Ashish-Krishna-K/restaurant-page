@@ -17,18 +17,22 @@ const addCurrentTabClass = (tab: HTMLLIElement) => {
 export default function switchTabs(this: HTMLLIElement, ev: MouseEvent) {
     addCurrentTabClass(this);
     const main = document.querySelector('main');
-    main.removeChild(main.firstChild);
-    switch (this.value) {
-        case 0:
-            main.appendChild(generateHomePage());
-            break;
-        case 1:
-            main.appendChild(generateMenuPage());
-            break;
-        case 2:
-            main.appendChild(generateContactPage());
-            break;
-    }
+    main.classList.add('render-animation');
+    setTimeout(() => {
+        main.removeChild(main.firstChild);
+        switch (this.value) {
+            case 0:
+                main.appendChild(generateHomePage());
+                break;
+            case 1:
+                main.appendChild(generateMenuPage());
+                break;
+            case 2:
+                main.appendChild(generateContactPage());
+                break;
+        }
+        main.classList.remove('render-animation');
+    }, 500);
 }
 
 loadPage();
