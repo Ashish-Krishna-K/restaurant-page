@@ -1,6 +1,8 @@
-#restaurant-page
+# restaurant-page
 
-A basic webpage with tab-switch type of navigation built as part of [The Odin Project's]() JavaScript source to practice using Webpack. 
+[Live Demo](https://ashish-krishna-k.github.io/restaurant-page/)
+
+A basic webpage with tab-switch type of navigation built as part of [The Odin Project's](https://www.theodinproject.com/) JavaScript source to practice using Webpack. 
 
 *This project was initially built during my first run of the odin project, during my second run i'm reworking all the projects however this time I have a better understanding due to having more knowledge. For all my reworks, I have chose to use typescript as a practice. For this rework I have chose to retain the original assets and design, only adding a little bit of flair using CSS transitions.*
 
