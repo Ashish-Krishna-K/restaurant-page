@@ -1,6 +1,7 @@
 import switchTabs from "./index";
 import generateHomePage from "./homePage";
 
+
 const createHeader = (): HTMLElement => {
     const header = document.createElement('header');
 
@@ -21,6 +22,8 @@ const createNavbar = (): HTMLElement => {
     homeTab.setAttribute("id", "home-tab");
     homeTab.classList.add('nav-element', 'selected');
     homeTab.textContent = "HOME";
+    // we'll grab this value when it's clicked and use it to determine
+    // which page to render.
     homeTab.value = 0;
     homeTab.addEventListener("click", switchTabs);
     ul.appendChild(homeTab);
@@ -47,6 +50,8 @@ const createNavbar = (): HTMLElement => {
 
 const createMain = (): HTMLElement => {
     const main = document.createElement('main');
+    // createMain is called only on the initial page load, and by default
+    // we want the homePage to be rendered.
     main.appendChild(generateHomePage());
     return main;
 }

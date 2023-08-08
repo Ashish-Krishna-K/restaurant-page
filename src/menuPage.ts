@@ -5,6 +5,11 @@ import lemonrice from './images/lemon-rice.jpg';
 import chai from './images/chai.jpg';
 import filterCoffee from './images/filter-coffee.webp';
 
+// An array of objects corresponding to the menu item, each object
+// contains the menu item name and the corresponding image for the 
+// menu item, we will loop through this array and pass the data to 
+// the createMenuItem function which will return an element 
+// corresponding to the menu item
 const menuItems = [
     { itemName: "IDLI-VADA", itemImg: idlivada },
     { itemName: "DOSA", itemImg: dosa },
@@ -21,6 +26,9 @@ export default function generateMenuPage() {
     const container = document.createElement('ul');
     container.classList.add('menu-container');
 
+    // loop through the menuItems array passing each object to the
+    // createMenuItem function and append the element returned by that
+    // function to the container.
     menuItems.forEach(item => {
         const { itemName, itemImg } = item;
         container.appendChild(createMenuItem(itemName, itemImg));

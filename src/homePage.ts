@@ -1,3 +1,4 @@
+// importing the image used in the home page
 import main from './images/main.webp';
 
 export default function generateHomePage() {
@@ -9,6 +10,7 @@ export default function generateHomePage() {
     home.appendChild(heading);
 
     const img = document.createElement('img');
+    // setting the img src as the imported image
     img.src = main;
     home.appendChild(img);
 
